@@ -17,3 +17,5 @@ include 'services:webservice'
 */
 
 rootProject.name = 'hazelcast-getting-started-book'
+include 'client'
+include 'chapters'

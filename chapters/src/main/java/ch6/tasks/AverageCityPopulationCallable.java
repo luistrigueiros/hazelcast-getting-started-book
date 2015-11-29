@@ -1,6 +1,6 @@
 package ch6.tasks;
 
-import data.City;
+import  ch6.data.City;
 
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.HazelcastInstanceAware;
@@ -13,7 +13,8 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.concurrent.Callable;
 
-/*
+
+
 public class AverageCityPopulationCallable implements Callable<Integer>, HazelcastInstanceAware, PartitionAware, Serializable {
 
   private String country;
@@ -37,7 +38,7 @@ public class AverageCityPopulationCallable implements Callable<Integer>, Hazelca
   public Integer call() throws Exception {
     System.err.println("Running task on: " + hz.getCluster().getLocalMember().toString());
     IMap<String, City> cities = hz.getMap("cities");
-    Predicate countryCityPredicate = Predicates.equal(Predicates.get("country"), country);
+    Predicate countryCityPredicate = Predicates.equal("country", country);
     Collection<City> countryCities = cities.values(countryCityPredicate);
 
     int totalPopulation = 0;
@@ -48,4 +49,3 @@ public class AverageCityPopulationCallable implements Callable<Integer>, Hazelca
     return totalPopulation / countryCities.size();
   }
 }
-*/
